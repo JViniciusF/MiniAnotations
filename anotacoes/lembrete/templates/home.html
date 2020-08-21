@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>My Anotations </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src = "script.js"></script>
+  
+  <style>
+  .fakeimg {
+    height: 200px;
+    width: 300px;
+    background: #aaa;
+  }
+  
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href=" ">Anotations</a>
+  <a class= "navbar-brand" href="form">
+    <img src="iconADD.png"></img> 
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   
+</nav>
+
+<div id = "principal" class="container" style="margin-top:30px">
+  <div class="row">
+    <h2>Minhas Anotações</h2>
+  </div>
+    <div class="row">
+      {%for lembrete in lembretes%} 
+      <div class="col-sm-4" style="margin-right: 2%; margin-top: 2%;">
+        <div class="fakeimg">
+          <H6 style="text-align: center; margin-top:4%">{{lembrete.titulo}}</H6>
+          <div style="margin: 4%;">{{lembrete.mensagem}}</div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+    
+</div>
+
+<div class = "row"></div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Esse é um pequeno programa para fazer funciolaidades do Django com serve</p>
+</div>
+
+</body>
+</html>
