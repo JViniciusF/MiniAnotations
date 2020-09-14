@@ -48,9 +48,11 @@
       {%for lembrete in lembretes%} 
         <div class="fakeimg" style="margin: 15px;">
           
-          <a type = 'button'class= "navbar-toggler" style="margin-left:260px ;" href="/delete/{{lembrete.id}}/"><img src="templates/letter-x.png"></a>
+          <a type = 'button'class= "navbar-toggler" style="margin-left:260px ;" href="/delete/{{lembrete.id}}/">
+            <img src ="https://raw.githubusercontent.com/JViniciusF/MiniAnotations/master/anotacoes/lembrete/templates/letter-x.png" style="width: 20px; height: auto;">
+          </a>
           <H5 style="text-align:left; margin-left:6%">{{lembrete.titulo}}</H5>
-          <div style="margin: 4%;">- {{lembrete.mensagem}}</div>
+          <div style="margin: 4%;">{{lembrete.mensagem}}</div>
       </div>
       {%endfor%}
     </div>
