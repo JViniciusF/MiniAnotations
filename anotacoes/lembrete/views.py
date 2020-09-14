@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.forms import forms
 from .models import Lembrete
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from .forms import Tlt_lembrete
 
@@ -12,9 +12,6 @@ def home (request):
     lembretes = Lembrete.objects.all()
     return render(request,'home.html',{'lembretes':lembretes})
 
-def formulario(request):
-    return render(request,"form.html")
-
 def add(request):
     lbt_titulo = request.POST["lbt_titulo"]
     lbt_msg = request.POST["lbt_msg"]
@@ -23,4 +20,11 @@ def add(request):
 
     n_lembrete.save()
     lembretes = Lembrete.objects.all()
-    return render(request,'form.html')
+    return redirect(home)
+
+def delete(request,id):
+    lembreteDel = Lembrete.objects.filter(id = id)
+    lembreteDel.delete()
+    lembretes = Lembrete.objects.all()
+    home(request)
+    return redirect(home)
